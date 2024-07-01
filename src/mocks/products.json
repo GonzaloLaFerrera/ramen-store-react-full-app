@@ -1,0 +1,58 @@
+{
+    "products": [
+        {
+            "id":1,
+            "title": "Hiyayakko",
+            "description":"This simple dish consists of cold tofu topped with green onion, ginger, and other condiments, and dressed with soy sauce. It's easy to digest and it's suitable for those times you're not very hungry but still need to put something in your stomach. Hiyayakko is a staple menu item of any izakaya (Japanese pub). Pair it with an ice cold beer!",
+            "price": "2,75",
+            "stock": "5",
+            "category": "cold-dishes",
+            "thumbnail":"/img/cold_dishes/Ramen-b5.jpg"
+        },
+        {
+            "id":2,
+            "title": "Tokoroten",
+            "description": "Tokoroten is made from a type of red seaweed called tengusa that is boiled until it melts and then firmed up. Using a tool called tentsuki, it's shaped into thin long noodles and stuffed into packs. It's often sold in the tofu corner of supermarkets, and it's available all year long! These smooth noodles match divinely with sauce. They're very refreshing, hence perfect for the summer.",
+            "price": "3,50",
+            "stock": "5",
+            "category": "cold-dishes",
+            "thumbnail": "/img/cold_dishes/Ramen-b6.jpg"
+        },
+        {
+            "id":3,
+            "title": "Zaru Udon",
+            "description": "Zaru soba and zaru udon are probably the most representative noodle dishes of Japan's summers. Made respectively with wheat flour and buckwheat flour, they are boiled, soaked in ice water, and arranged on a bamboo basket (zaru in Japanese). Any soba restaurant in the country serves these. Sometimes they're paired with tempura or grated yam, so why don't you taste and compare various combinations?",
+            "price": "2,50",
+            "stock": "8",
+            "category": "cold-dishes",
+            "thumbnail": "/img/cold_dishes/Ramen-b7.jpg"
+        },
+        {
+            "id":4,
+            "title": "Vanilla Purin",
+            "description":"Vanilla Purin (バニラプリン) is a cold custard dessert in Japan.  The name Purin comes from the word pudding, but it is not the same thing as the gooey pudding in the US at all.   This custard pudding has more the feel of a jelly dish because of its gelatin content.  It is a very basic sweet but everyone in Japan adores it.  It is a great alternative dessert to ice cream in summer.",
+            "price": "1,25",
+            "stock": "6",
+            "category": "desserts",
+            "thumbnail":"/img/desserts/vanilla-purin.jpeg"
+        },
+        {
+            "id":5,
+            "title": "Umeboshi",
+            "description": "Umeboshi refers to plum pickled in salt and sun-dried. Because of its unique sour flavor, the Japanese use it to make alcoholic drinks or eat it together with rice. It contains citric acid, which is super effective at restoring your energy and increasing your appetite - that's why it's a summer staple!",
+            "price": "3,50",
+            "stock": "5",
+            "category": "desserts",
+            "thumbnail": "/img/desserts/desserts2.jpg"
+        },
+        {
+            "id":6,
+            "title": "Kakigori",
+            "description": "Kakigori is an unmissable dessert for Japanese summers. Usually sold at festivals, it is basically shaved ice topped with syrup of various flavors, like strawberry, melon or Blue Hawaii. Lately, Taiwanese-style kakigori topped with large amounts of fruit and fluffy kakigori made with shavings of naturally formed ice are extremely trendy. Convenience stores sell lots of different kakigori as well. Eating kakigori in the middle of a heat wave is the ultimate experience!",
+            "price": "1,50",
+            "stock": "12",
+            "category": "desserts",
+            "thumbnail": "/img/desserts/desserts3.jpg"
+        }
+    ]
+}

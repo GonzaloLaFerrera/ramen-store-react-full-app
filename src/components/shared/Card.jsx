@@ -7,7 +7,7 @@ const Card = (props) => {
               <img src={img} alt="ramen1" className="w-40 h-40 object-cover -mt-20 rounded-full shadow-xl"/>
               <p className="text-xl">{title}</p>
               <span className="text-gray-400">${price}-.</span>
-              <span className="text-gray-500">{qty} Bowls available</span>
+              <span className="text-gray-500">{qty} Orders available</span>
             </div>
     )
 };

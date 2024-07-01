@@ -1,4 +1,5 @@
 import { RiSearch2Line } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
@@ -18,10 +19,11 @@ const Header = () => {
             </div>
             {/* Tabs */}
             <nav className="relative text-gray-300 flex items-center justify-between border-b mb-6 md:justify-start md:gap-8">
-              <a href="#" className="py-2 pr-4 text-[#ec7c6a] before:w-20 before:h-[1px] before:absolute before:bg-[#ec7c6a] before:left-0 before:rounded-full before:-bottom-[1px]">Hot Dishes</a>
-              <a href="#" className="py-2 pr-4">Cold Dishes</a>
-              <a href="#" className="py-2 pr-4">Soup</a>
-              <a href="#" className="py-2 pr-4">Grill</a>
+              {/* <a href="#" className="py-2 pr-4 text-[#ec7c6a] before:w-20 before:h-[1px] before:absolute before:bg-[#ec7c6a] before:left-0 before:rounded-full before:-bottom-[1px]">Hot Dishes</a> */}
+              <Link to={'/'} className="py-2 pr-4 text-[#ec7c6a] before:w-20 before:h-[1px] before:absolute before:bg-[#ec7c6a] before:left-0 before:rounded-full before:-bottom-[1px]">Hot Dishes</Link>
+              <Link to={'/coldDishes'} className="py-2 pr-4">Cold Dishes</Link>
+              <Link to={'/grill'} className="py-2 pr-4">Grill</Link>
+              <Link to={'/desserts'} className="py-2 pr-4">Desserts</Link>
             </nav>
           </header>
     )

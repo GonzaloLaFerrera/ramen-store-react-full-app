@@ -10,7 +10,7 @@ const Orders = (props) => {
         <div className={`bg-[#1F1D2B] w-full h-full fixed top-0 lg:col-span-2 lg:right-0 lg:w-[450px] transition-all z-50 ${showOrder ? "right-0" : "-right-full"}`}> {/* z-50 */}
           {/* Orders */}
           <div className="relative text-gray-300 pt-16 lg:pt-4 p-8 h-full">
-            <RiCloseLine onClick={() => setShowOrder(false)} className="lg:hidden absolute left-4 top-4 p-3 text-gray-300 bg-[#262837] rounded-full text-xl box-content"/>
+            <RiCloseLine onClick={() => setShowOrder(false)} className="lg:hidden absolute left-4 top-4 p-3 text-gray-300 bg-[#262837] rounded-full text-xl box-content hover:bg-[#ec7c6a] transition-all"/>
             <h1 className="md:text-2xl text-xl mt-6 mb-8">Order #567234</h1>
             {/* Order Tabs */}
             <div className="flex items-center flex-wrap gap-2 mb-4 text-sm">

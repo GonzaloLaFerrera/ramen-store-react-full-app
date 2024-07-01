@@ -7,7 +7,12 @@ import { PiPizzaLight } from "react-icons/pi";
 import Sidebar from "./components/shared/Sidebar";
 import Orders from "./components/shared/Orders";
 import Header from "./components/shared/Header";
-import Card from "./components/shared/Card";
+import Card from "./components/shared/Card"; // Ya no se usa (Componentizado)
+
+
+import { Outlet } from "react-router-dom";
+
+//App sería como el Layout por el momento
 
 const App = () => {
 
@@ -23,6 +28,8 @@ const App = () => {
     setShowMenu(false);
     setShowOrder(!showOrder);
 };
+
+
 
   return (
     <div className="bg-[#262837] w-full min-h-screen">
@@ -51,46 +58,8 @@ const App = () => {
               <h2 className="text-xl text-gray-300">Choose dishes</h2>
               <button className="flex items-center gap-4 text-gray-300 bg-[#1F1D2B] py-2 px-4 rounded-lg"><RiArrowDownSLine />Dine In</button>
           </div>
-          {/* Content */}
-          <div className="p-8 grid grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3">
-            {/* Card */}
-            <Card 
-              img="/img/Ramen1-noBg.png"
-              title="Tokushima ramen"
-              price="2.29"
-              qty="20"
-            />
-            <Card 
-              img="/img/Ramen7-noBg.png"
-              title="Takaida ramen"
-              price="4.29"
-              qty="18"
-            />
-            <Card 
-              img="/img/Ramen3-noBg.png"
-              title="Hida Takayama ramen"
-              price="3.49"
-              qty="16"
-            />
-            <Card 
-              img="/img/Ramen8-noBg.png"
-              title="Osaka style ramen"
-              price="3.00"
-              qty="14"
-            />
-            <Card 
-              img="/img/Ramen9-noBg.png"
-              title="Tori-Paitan ramen"
-              price="1.99"
-              qty="20"
-            />
-            <Card 
-              img="/img/Ramen6-noBg.png"
-              title="Golden Shrimp ramen"
-              price="3.59"
-              qty="12"
-            />
-          </div>
+          {/* Content */} {/* Acá renderizo los distintos menús/rutas */}          
+          <Outlet /> 
         </div>
         <Orders showOrder={showOrder} setShowOrder={setShowOrder}/>
       </main>
