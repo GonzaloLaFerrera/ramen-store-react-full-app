@@ -5,6 +5,7 @@ import ColdDishes from "../pages/ColdDishes";
 import Grill from "../pages/Grill";
 import HotDishes from "../pages/HotDishes";
 import Desserts from "../pages/Desserts";
+import useFilters from "../hooks/useFilters";
 
 
 console.log(products)
@@ -20,7 +21,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/coldDishes',
-                element: <ColdDishes products={products}/> /* agrego acá como props los productos */
+                element: <ColdDishes products={products}/> 
             },
             {
                 path:'/grill',
@@ -28,7 +29,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/desserts',
-                element: <Desserts products={products}/> /* agrego acá como props los productos */
+                element: <Desserts products={products}/> 
             },
         ]
     }

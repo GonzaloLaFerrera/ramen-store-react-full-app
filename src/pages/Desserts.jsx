@@ -1,8 +1,13 @@
 import Card2 from "../components/shared/Card2";
+import useFilters from "../hooks/useFilters";
 
 export function Desserts ({ products }) {
 
-    const dessertsFilteredProducts = products.filter(product => product.category === 'desserts');
+    const dessertsProducts = products.filter(product => product.category === 'desserts');
+
+    const { filterProducts } = useFilters();
+
+    const dessertsFilteredProducts = filterProducts(dessertsProducts);
 
     console.log(dessertsFilteredProducts);
 

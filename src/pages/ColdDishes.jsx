@@ -1,4 +1,5 @@
 import Card2 from "../components/shared/Card2";
+import useFilters from "../hooks/useFilters";
 
 /* export function ColdDishes ({ products }) {
 
@@ -29,7 +30,11 @@ import Card2 from "../components/shared/Card2";
 
     export function ColdDishes ({ products }) {
 
-        const coldDishesFilteredProducts = products.filter(product => product.category === 'cold-dishes');
+        const coldDishesProducts = products.filter(product => product.category === 'cold-dishes');
+        
+        const { filterProducts } = useFilters();
+        
+        const coldDishesFilteredProducts = filterProducts(coldDishesProducts);
 
         console.log(coldDishesFilteredProducts);
 

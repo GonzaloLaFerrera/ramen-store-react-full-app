@@ -7,10 +7,12 @@ import { PiPizzaLight } from "react-icons/pi";
 import Sidebar from "./components/shared/Sidebar";
 import Orders from "./components/shared/Orders";
 import Header from "./components/shared/Header";
+import MenuTypeSelector from "./components/shared/MenutypeSelector";
 import Card from "./components/shared/Card"; // Ya no se usa (Componentizado)
 
-
 import { Outlet } from "react-router-dom";
+
+
 
 //App sería como el Layout por el momento
 
@@ -28,6 +30,8 @@ const App = () => {
     setShowMenu(false);
     setShowOrder(!showOrder);
 };
+  
+
 
 
 
@@ -54,9 +58,10 @@ const App = () => {
           {/* Header */}
           <Header /> 
           {/* Title Content */}
-          <div className="flex items-center justify-between mb-16">
+          <div className="flex items-baseline justify-between mb-16">
               <h2 className="text-xl text-gray-300">Choose dishes</h2>
-              <button className="flex items-center gap-4 text-gray-300 bg-[#1F1D2B] py-2 px-4 rounded-lg"><RiArrowDownSLine />Dine In</button>
+              {/* <button className="flex items-center gap-4 text-gray-300 bg-[#1F1D2B] py-2 px-4 rounded-lg"><RiArrowDownSLine />Dine In</button> */}
+              <MenuTypeSelector />
           </div>
           {/* Content */} {/* Acá renderizo los distintos menús/rutas */}          
           <Outlet /> 
