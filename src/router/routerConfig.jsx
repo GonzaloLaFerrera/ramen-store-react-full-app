@@ -8,6 +8,8 @@ import Desserts, { loaderDesserts } from "../pages/Desserts";
 import ProductDetail, { loaderProductDetail } from "../components/shared/ProductDetail";
 import NotFound from "../pages/NotFound";
 import SearchResults, { loaderSearchResults } from "../pages/SearchResults";
+import AdminLogin from "../pages/AdminLogin";
+import LayoutPrivate from "../layouts/LayoutPrivate";
 
 
 console.log(products);
@@ -48,6 +50,16 @@ export const router = createBrowserRouter([
                 path:'/searchResults/:search', //agregue params dinámicos
                 element:<SearchResults />,
                 loader: loaderSearchResults
+            },           
+        ]
+    },
+    {
+        path:'/adminLayout',
+        element:<LayoutPrivate />,
+        children:[
+            {
+                path:'/adminLayout/adminLogin',
+                element:<AdminLogin />,
             }
         ]
     }
