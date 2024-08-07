@@ -1,51 +1,54 @@
+import { useLoaderData } from "react-router-dom";
 import Card from "../components/shared/Card";
+import useFilters from "../hooks/useFilters";
+import ProductsNotFound from "../components/shared/ProductsNotFound";
 
 
 const HotDishes = () => {
+    const { data: products } = useLoaderData();
+    // const { category } = products; NO SE UTILIZA MÁS!
+
+    const hotDishesProducts = products.filter(product => product.category === 'hot-dishes');
+    const { filterProducts } = useFilters();
+        
+    const hotDishesFilteredProducts = filterProducts(hotDishesProducts);
+
+    console.log(hotDishesFilteredProducts);
+
     return(
         <>
-            <h1>Hot dishes papá</h1>
             <div className="p-8 grid grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3">
                 {/* Card */}
-                <Card 
-                img="/img/Ramen1-noBg.png"
-                title="Tokushima ramen"
-                price="2.29"
-                qty="20"
-                />
-                <Card 
-                img="/img/Ramen7-noBg.png"
-                title="Takaida ramen"
-                price="4.29"
-                qty="18"
-                />
-                <Card 
-                img="/img/Ramen3-noBg.png"
-                title="Hida Takayama ramen"
-                price="3.49"
-                qty="16"
-                />
-                <Card 
-                img="/img/Ramen8-noBg.png"
-                title="Osaka style ramen"
-                price="3.00"
-                qty="14"
-                />
-                <Card 
-                img="/img/Ramen9-noBg.png"
-                title="Tori-Paitan ramen"
-                price="1.99"
-                qty="20"
-                />
-                <Card 
-                img="/img/Ramen6-noBg.png"
-                title="Golden Shrimp ramen"
-                price="3.59"
-                qty="12"
-                />
+                {
+                    hotDishesFilteredProducts.length > 0 ? (
+                        hotDishesFilteredProducts.map(product => 
+                            (
+                                <Card 
+                                    key={product.id}                                    
+                                    {...product}
+                                />
+                            )
+                        )
+                    ) : (
+                        <ProductsNotFound />
+                    )
+                }
             </div>
         </>
     )
 };
 
 export default HotDishes;
+
+export const loaderHotDishes = async () => {
+    const res = await fetch('http://localhost:3000/products');
+    if(!res.ok) {
+        throw new Response ("", {
+            status: 404,
+            statusText:"Not found, my friend!"
+        });
+    }
+    const data = await res.json();
+
+    return {data};
+};

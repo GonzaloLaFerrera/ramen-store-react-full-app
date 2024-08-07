@@ -1,17 +1,18 @@
+// Hooks
 import { useState } from "react";
 
-import { RiMenu2Fill,RiUser3Line, RiCloseLine, RiSearch2Line, RiArrowDownSLine, RiDeleteBin6Line } from "react-icons/ri";
+// Icons
+import { RiMenu2Fill,RiUser3Line, RiCloseLine } from "react-icons/ri";
 import { MdOutlineAddBox } from "react-icons/md";
 import { PiPizzaLight } from "react-icons/pi";
 
+// Components
 import Sidebar from "./components/shared/Sidebar";
 import Orders from "./components/shared/Orders";
 import Header from "./components/shared/Header";
 import MenuTypeSelector from "./components/shared/MenutypeSelector";
-import Card from "./components/shared/Card"; // Ya no se usa (Componentizado)
 
 import { Outlet } from "react-router-dom";
-
 
 
 //App sería como el Layout por el momento
@@ -31,10 +32,6 @@ const App = () => {
     setShowOrder(!showOrder);
 };
   
-
-
-
-
   return (
     <div className="bg-[#262837] w-full min-h-screen">
       <Sidebar showMenu={showMenu} />

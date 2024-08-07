@@ -1,32 +1,54 @@
+import { useLoaderData } from "react-router-dom";
 import Card from "../components/shared/Card";
+import useFilters from "../hooks/useFilters";
+import ProductsNotFound from "../components/shared/ProductsNotFound";
+
 
 const Grill = () => {
+    const { data: products } = useLoaderData();
+    // const { category } = products; NO SE UTILIZA MÁS!
+
+    const grillProducts = products.filter(product => product.category === 'grill');
+    const { filterProducts } = useFilters();
+        
+    const grillFilteredProducts = filterProducts(grillProducts);
+
+    console.log(grillFilteredProducts);
+
     return(
         <>
-            <h1>ParriGrill vieji</h1>
             <div className="p-8 grid grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3">
                 {/* Card */}
-                <Card 
-                img="/img/grill/Grill1.jpg"
-                title="Tai No Shioyaki"
-                price="4.15"
-                qty="6"
-                />
-                <Card 
-                img="/img/grill/Grill2.jpg"
-                title="Yosenabe with miso"
-                price="5.29"
-                qty="8"
-                />
-                <Card 
-                img="/img/grill/Grill3.jpg"
-                title="Gyoden"
-                price="3.80"
-                qty="8"
-                />
+                {
+                    grillFilteredProducts.length > 0 ? (
+                        grillFilteredProducts.map(product => 
+                            (
+                                <Card 
+                                    key={product.id}                                    
+                                    {...product}
+                                />
+                            )
+                        )
+                    ) : (
+                        <ProductsNotFound />
+                    )
+                }
             </div>
         </>
     )
 };
 
 export default Grill;
+
+export const loaderGrill = async () => {
+    const res = await fetch('http://localhost:3000/products');
+    if(!res.ok) {
+        throw new Response ("", {
+            status: 404,
+            statusText:"Not found, my friend!"
+        });
+    }
+    const data = await res.json();
+
+    return {data};
+};

@@ -1,36 +1,54 @@
 import { createBrowserRouter } from "react-router-dom";
-import { products } from '../mocks/products.json'
+import { products } from '../mocks/products.json';
 import App from "../App";
-import ColdDishes from "../pages/ColdDishes";
-import Grill from "../pages/Grill";
-import HotDishes from "../pages/HotDishes";
-import Desserts from "../pages/Desserts";
-import useFilters from "../hooks/useFilters";
+import ColdDishes, { loaderColdDishes } from "../pages/ColdDishes";
+import Grill, { loaderGrill } from "../pages/Grill";
+import HotDishes, { loaderHotDishes } from "../pages/HotDishes";
+import Desserts, { loaderDesserts } from "../pages/Desserts";
+import ProductDetail, { loaderProductDetail } from "../components/shared/ProductDetail";
+import NotFound from "../pages/NotFound";
+import SearchResults, { loaderSearchResults } from "../pages/SearchResults";
 
 
-console.log(products)
+console.log(products);
 
 export const router = createBrowserRouter([
     {
         path: '/',
         element: <App />,
+        errorElement:<NotFound />,
         children:[
             {
                 index: true,
-                element: <HotDishes />
+                element: <HotDishes />,
+                loader: loaderHotDishes,
             },
             {
                 path:'/coldDishes',
-                element: <ColdDishes products={products}/> 
+                element: <ColdDishes />, 
+                loader: loaderColdDishes
             },
             {
                 path:'/grill',
-                element: <Grill />
+                element: <Grill />,
+                loader: loaderGrill
+                
             },
             {
                 path:'/desserts',
-                element: <Desserts products={products}/> 
+                element: <Desserts />, 
+                loader: loaderDesserts
             },
+            {
+                path:'productDetail/:id',
+                element:<ProductDetail />,
+                loader: loaderProductDetail
+            },
+            {
+                path:'/searchResults/:search', //agregue params dinámicos
+                element:<SearchResults />,
+                loader: loaderSearchResults
+            }
         ]
     }
 ]);
