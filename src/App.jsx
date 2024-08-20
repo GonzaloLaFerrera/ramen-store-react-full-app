@@ -13,6 +13,7 @@ import Header from "./components/shared/Header";
 import MenuTypeSelector from "./components/shared/MenutypeSelector";
 
 import { Outlet } from "react-router-dom";
+// import MobileMenu from "./components/shared/MobileMenu";
 
 
 //App sería como el Layout por el momento
@@ -55,7 +56,7 @@ const App = () => {
           {/* Header */}
           <Header /> 
           {/* Title Content */}
-          <div className="flex items-baseline justify-between mb-16">
+          <div className="flex items-baseline justify-between mb-10">
               <h2 className="text-xl text-gray-300">Choose dishes</h2>
               {/* <button className="flex items-center gap-4 text-gray-300 bg-[#1F1D2B] py-2 px-4 rounded-lg"><RiArrowDownSLine />Dine In</button> */}
               <MenuTypeSelector />

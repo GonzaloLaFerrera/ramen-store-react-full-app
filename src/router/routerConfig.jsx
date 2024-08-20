@@ -10,6 +10,8 @@ import NotFound from "../pages/NotFound";
 import SearchResults, { loaderSearchResults } from "../pages/SearchResults";
 import AdminLogin from "../pages/AdminLogin";
 import LayoutPrivate from "../layouts/LayoutPrivate";
+import Contact from "../pages/Contact";
+import Announcements from "../pages/Announcements";
 
 
 console.log(products);
@@ -50,7 +52,15 @@ export const router = createBrowserRouter([
                 path:'/searchResults/:search', //agregue params dinámicos
                 element:<SearchResults />,
                 loader: loaderSearchResults
-            },           
+            },
+            {
+                path:'/contact',
+                element:<Contact />
+            },
+            {
+                path:'/announcements',
+                element:<Announcements />
+            }           
         ]
     },
     {
