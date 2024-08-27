@@ -12,6 +12,10 @@ import AdminLogin from "../pages/AdminLogin";
 import LayoutPrivate from "../layouts/LayoutPrivate";
 import Contact from "../pages/Contact";
 import Announcements from "../pages/Announcements";
+import Stores from "../pages/Stores";
+import Recipes from "../pages/Recipes";
+import RecipeDetail1 from "../pages/RecipeDetail1";
+import RecipeDetail2 from "../pages/RecipeDetail2";
 
 
 console.log(products);
@@ -60,7 +64,34 @@ export const router = createBrowserRouter([
             {
                 path:'/announcements',
                 element:<Announcements />
-            }           
+            },
+            {
+                path:'/stores',
+                element:<Stores />
+            },
+            {
+                path:'/recipes',
+                element:<Recipes />,
+                /* children:[ ----> NO ESTÁ FUNCIONANDO EL RENDERIZADO ANIDADO!
+                    {
+                        path:'/recipes/recipeDetail1',
+                        element:<RecipeDetail1 />
+                    },
+                    {
+                        path:'/recipes/recipeDetail2',
+                        element:<RecipeDetail2 />
+                    },
+                ]   */ 
+            //    SI LOS AGREGO COMO RUTAS INDEPENDIENTES SI FUNCIONA!
+            },
+            {
+                path:'/recipeDetail1',
+                element:<RecipeDetail1 />
+            },
+            {
+                path:'/recipeDetail2',
+                element:<RecipeDetail2 />
+            },          
         ]
     },
     {

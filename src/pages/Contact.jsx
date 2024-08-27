@@ -7,7 +7,7 @@ const Contact = () => {
     console.log(errors)
 
     const onSubmit = handleSubmit((data) => {
-        console.log(data)
+        console.log(data) // Acá vendría un POST al back
         alert('Processing data....')
         reset()
         alert('Your contact form was succesfully sent')

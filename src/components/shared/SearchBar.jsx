@@ -24,9 +24,15 @@ const SearchBar = () => {
         return {productos};
     }; */
 
+    const searchParam = new URLSearchParams({title: search})
+
+
     useEffect(() => {
+        setSearchParams(search)
+        console.log(searchParams)
         const getData = async () => {
-            const res = await fetch('http://localhost:3000/products');
+            const res = await fetch('http://localhost:3000/products/?title=ramen');
+            console.log(res)
             if(!res.ok) {
                 throw new Response ("", {
                     status: 404,
@@ -34,20 +40,20 @@ const SearchBar = () => {
                 });
             }
             const data = await res.json();
-            // console.log(data);
-            setProductos(data);
+            console.log(data);
+            // setProductos(data);
             // creo que acá debe ir el setSearchParams
             //console.log(debouncedValue)
-            setSearchParams(debouncedValue)
+            // setSearchParams(search)
             // return {data};
         };
         search ? getData() : setProductos([]);
         // console.log([debouncedValue])
         
-    }, [debouncedValue]); //acá agregue como dependencia 'search' porque sino no renderizaba o actualizaba correctamente el estado
+    }, [search]); //}, [debouncedValue]); acá agregue como dependencia 'search' porque sino no renderizaba o actualizaba correctamente el estado
                   //pero de esta forma realiza un fetch cada vez que escribo algo en el input
                   //cambio dep 'search' por 'debounceValue'
-    console.log(debouncedValue)
+    // console.log(debouncedValue)
 
     console.log(productos);
 

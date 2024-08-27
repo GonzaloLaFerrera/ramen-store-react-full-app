@@ -56,7 +56,7 @@ const App = () => {
           {/* Header */}
           <Header /> 
           {/* Title Content */}
-          <div className="flex items-baseline justify-between mb-10">
+          <div className="flex items-baseline justify-between mb-6">
               <h2 className="text-xl text-gray-300">Choose dishes</h2>
               {/* <button className="flex items-center gap-4 text-gray-300 bg-[#1F1D2B] py-2 px-4 rounded-lg"><RiArrowDownSLine />Dine In</button> */}
               <MenuTypeSelector />

@@ -22,9 +22,9 @@ const Sidebar = ( props ) => {
                         </Link>
                     </li>
                     <li className="p-4 rounded-tl-lg rounded-bl-xl hover:bg-[#262837] group transition-colors">
-                        <a href="#" className="p-4 flex justify-center rounded-xl text-[#ec7c6a] group-hover:bg-[#ec7c6a] group-hover:text-white transition-colors">
+                        <Link to='/stores' className="p-4 flex justify-center rounded-xl text-[#ec7c6a] group-hover:bg-[#ec7c6a] group-hover:text-white transition-colors">
                             <IoRestaurantOutline className="text-2xl"/>
-                        </a>
+                        </Link>
                     </li>
                     <li className="p-4 rounded-tl-lg rounded-bl-xl hover:bg-[#262837] group transition-colors">
                         <Link to='/recipes' className="p-4 flex justify-center rounded-xl text-[#ec7c6a] group-hover:bg-[#ec7c6a] group-hover:text-white transition-colors">
