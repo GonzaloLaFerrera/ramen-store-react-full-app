@@ -1,5 +1,6 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import SearchBar from "./SearchBar";
+
 
 //Estilos para el NavLink
   const activeLink = 'py-2 pr-4 text-[#ec7c6a] uppercase underline underline-offset-10 decoration-2';
@@ -18,11 +19,9 @@ const Header = () => {
               <div>
                 <h1 className="text-2xl text-gray-300">Koi Dragon Ramen</h1>
                 <p className="text-gray-500">Martes 12 de Marzo del 2024</p>
-              </div>
-              <form>
-                {/* Search Bar */}
-                <SearchBar />
-              </form>
+              </div>              
+              {/* Search Bar */}
+              <SearchBar />
             </div>
             {/* Tabs */}
             <nav className="relative text-gray-300 flex items-center justify-between border-b  mb-6 md:justify-start md:gap-8">

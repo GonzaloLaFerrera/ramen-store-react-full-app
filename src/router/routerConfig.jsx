@@ -53,8 +53,8 @@ export const router = createBrowserRouter([
                 loader: loaderProductDetail
             },
             {
-                path:'/searchResults/:search', //agregue params dinámicos
-                element:<SearchResults />,
+                path: '/searchResults',
+                element: <SearchResults />,
                 loader: loaderSearchResults
             },
             {
@@ -85,7 +85,7 @@ export const router = createBrowserRouter([
             //    SI LOS AGREGO COMO RUTAS INDEPENDIENTES SI FUNCIONA!
             },
             {
-                path:'/recipeDetail1',
+                path:'/recipeDetail1', //'recipeDetail/:id
                 element:<RecipeDetail1 />
             },
             {
